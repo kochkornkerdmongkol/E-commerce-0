@@ -46,19 +46,19 @@ public class ManulTestRunner {
        Shipment giftWrapped = new GiftWrapDecorator(standardShipment);
        System.out.println("Decorator: " + giftWrapped.getInfo() + ",Cost " + giftWrapped.getCost());
 
-      // "ห่อ" ทับด้วยบริการประกันสินค้า
-      Shipment fullyLoaded = new InsuranceDecorator(giftWrapped, myOrder);
-      System.out.println("Fully Decorated: " + fullyLoaded.getInfo() +", Cost: " + fullyLoaded.getCost());
+       // "ห่อ" ทับด้วยบริการประกันสินค้า
+       Shipment fullyLoaded = new InsuranceDecorator(giftWrapped, myOrder);
+       System.out.println("Fully Decorated: " + fullyLoaded.getInfo() +", Cost: " + fullyLoaded.getCost());
 
-      System.out.println("\n--- 4. Printing Final Summary ---");
-      double finalPrice = PriceAfterPercentage; //สมมติว่าใช้ส่วนลด 10%
-      double totalCost = finalPrice + fullyLoaded.getCost();
-      System.out.println("Final price after discount: " + finalPrice);
-      System.out.println("Fianl shipment cost: " + fullyLoaded.getCost());
-      System.out.println("TOTAL TO PAY: " + totalCost);
+       System.out.println("\n--- 4. Printing Final Summary ---");
+       double finalPrice = PriceAfterPercentage; //สมมติว่าใช้ส่วนลด 10%
+       double totalCost = finalPrice + fullyLoaded.getCost();
+       System.out.println("Final price after discount: " + finalPrice);
+       System.out.println("Fianl shipment cost: " + fullyLoaded.getCost());
+       System.out.println("TOTAL TO PAY: " + totalCost);
 
-      // --- 5. Testing Observer Pattern (Processing Order) ---
-      orderProcessor.processOrder(myOrder);
+       // --- 5. Testing Observer Pattern (Processing Order) ---
+       orderProcessor.processOrder(myOrder);
 
     }
 }
